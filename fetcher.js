@@ -1,8 +1,14 @@
 const request = require('request');
 const fs = require('fs');
-
+const readline = require('readline');
 const arr = process.argv.slice(2,4);
-//console.log(arr[0]);
+
+// const r1 = readline.createInterface({
+//   input : process.stdin,
+//   output : process.stdout
+// });
+
+
 request(arr[0], (error, response, body) => {
   if(error) {
     return console.log('URL is invalid'); // Print the error if one occurred
@@ -25,4 +31,3 @@ console.log('statusCode:', response && response.statusCode); // Print the respon
   
   });
 });
-
